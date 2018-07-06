@@ -45,7 +45,7 @@ void searchCityNeighbours()
     {
         //read through the file with a loop
         int num;
-        while((num = fscanf("%s %d %d", "r")), !EOF)
+        while((num = fscanf(franceFile, "%s %d %d")), !EOF)
         {
             if(num == 3)
             {
