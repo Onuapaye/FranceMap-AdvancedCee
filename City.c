@@ -99,9 +99,11 @@ void searchCityNeighbours()
         //foreach loop to assign cities
         myFunctionLoop(map);
 
-    //close the file resource
-    fclose(franceFile);
+        //close the file resource
+        fclose(franceFile);
+    }
 }
+
 
 void myFunctionLoop(List *map)
 {

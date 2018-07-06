@@ -33,7 +33,6 @@ void myFunctionLoop(List *map);
 City *findCityByName(List *map, char *name_of_city);
 
 
-
 //a function to search for cities and neighbours
 void searchCityNeighbours();
 
