@@ -92,7 +92,7 @@ void searchCityNeighbours()
             }
             else
             {
-                //status.ERRUNKNOWN;
+                printf("Error in finding a City or its Neighbour");
             }
         }
 
@@ -104,7 +104,8 @@ void searchCityNeighbours()
     }
 }
 
-
+//a function to loop and find the name of a city within a list
+//and print it out
 void myFunctionLoop(List *map)
 {
 
@@ -127,7 +128,7 @@ void myFunctionLoop(List *map)
             currentNeighbour->city = findCityByName(map, currentNeighbour->city_Name);
             neighbourNode = neighbourNode->next;
         }
-        printf("City is %s\n", currentCity);
+        printf("City is %s\n", city->cityName);
         node = node->next;
     }
 }
@@ -147,6 +148,48 @@ City *findCityByName(List *map, char *name_of_city)
     }
     return 0;
 }
+
+
+void astar(List *map, City *start, City *end)
+{
+    List *open;
+    List *closed;
+
+    // These are the main lists to keep track of what cities you've visited
+    open = newList(compare_function, printCity);
+    closed = newList(compare_function, printCity);
+
+    // add the start city to the list
+    addList(open, start);
+
+    // start the loop at the first element in open
+    Node *node = open->head;
+
+    while (node) {
+        City *currentCity = (City *)node->val;
+
+        // check to see if we're already at the end
+        if (strcmp(currentCity->cityName, end->cityName) == 0) {
+            // if found a city, print the path back
+            printPath("Bismark found %s\n", end->cityName);
+            return;
+        }
+
+        // remove the value took from the open list and add it to the closed list
+        remFromList(open, currentCity);
+        addList(closed, currentCity);
+
+        // search all neighbours and add them to the open list
+        // but only if they're not already in open or closed
+        if(stricmp(neighbour->city_Name)){
+
+        }
+
+        /// this can be found in wikipedia mostly
+    }
+
+}
+
 
 int main()
 {

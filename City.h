@@ -11,6 +11,7 @@ typedef struct City_List
     int distanceFromStart; // 100000 a big value assigned;
     int distanceToGoal; // 100000 a big value assigned;
     List *neighbour;
+    struct City_List *cameFrom;
 }City;
 
 //neighbours
