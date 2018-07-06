@@ -39,7 +39,8 @@ void searchCityNeighbours()
 //    printf("We found: %s %d %d\n", scanf_city, scanf_dist_x, scanf_dist_y);
 
     int num, distance_1, distance_2;
-    char* city_name, neighbour_name;
+    char neighbour_name[128];
+    char city_name[128];
 
     //create a pointer to the file
     FILE *franceFile;
