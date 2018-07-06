@@ -155,7 +155,7 @@ void astar(List *map, City *start, City *end)
     List *open;
     List *closed;
 
-    // These are the main lists to keep track of what cities you've visited
+    // The main lists to keep track of what cities visited
     open = newList(compare_function, printCity);
     closed = newList(compare_function, printCity);
 
@@ -181,11 +181,10 @@ void astar(List *map, City *start, City *end)
 
         // search all neighbours and add them to the open list
         // but only if they're not already in open or closed
-        if(stricmp(neighbour->city_Name)){
+//        if(stricmp(neighbour->city_Name)){
+//
+//        }
 
-        }
-
-        /// this can be found in wikipedia mostly
     }
 
 }

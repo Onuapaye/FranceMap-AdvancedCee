@@ -166,7 +166,7 @@ status displayList (List * l ) {
   putchar(']');
 }
 
-/* sequencially call given function with each element of given list */
+/* sequentially call given function with each element of given list */
 void forEach (List* l, void(*f)(void*)) {
   Node * tmp = l->head;
   while (tmp) {
