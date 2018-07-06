@@ -71,7 +71,6 @@ void searchCityNeighbours()
 
                 //add city to map
                 addList(map, city);
-                addList(city->neighbour, neighbour);
 
                 //print result of the city
                 printf("A City of %s is found.\n", city_neighbour_name);
@@ -85,7 +84,7 @@ void searchCityNeighbours()
                 neighbour->distance = (longitude_distance + latitude_distance) ;
                 neighbour->city = 0; //newList(compare_function, printCity);
 
-                addList(city->neighbour, neighbour)
+                addList(city->neighbour, neighbour);
 
                 printf("A Neighbour of %s is found\n", city_neighbour_name);
             }
