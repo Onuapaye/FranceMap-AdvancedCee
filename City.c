@@ -45,7 +45,7 @@ void searchCityNeighbours()
     FILE *franceFile;
     franceFile = fopen("FRANCE.MAP", "r");
 
-    int elt1, elt2;
+    //int elt1, elt2;
 
     //create a list of cities and neighbour
     List *map = newList(compare_function, printCity);
@@ -88,11 +88,11 @@ void searchCityNeighbours()
 
                 addList(map, neighbour);
 
-                printf("print this string %s\n", city_name);
+                printf("These are the Neighbours found %s\n", neighbour_name);//must I use neighbour_name or city_name?
             }
             else
             {
-                status.ERRUNKNOWN;
+                //status.ERRUNKNOWN;
             }
         }
     }
