@@ -22,6 +22,16 @@ typedef struct Neighbour_List
 } Neighbour;
 
 
+bool isFileNull(FILE *fileName);
+
+void printCity(void *element);
+
+int compare_function (void *elet_1, void *elet_2);
+
+void myFunctionLoop(List *map);
+
+City *findCityByName(List *map, char *name_of_city);
+
 
 
 //a function to search for cities and neighbours
