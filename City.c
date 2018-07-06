@@ -4,7 +4,11 @@
 #include "City.h"
 #include "status.h"
 
+int element_1, element_2;
+City *city;
+Neighbour *neighbour;
 
+//a comparison function to compare the elements
 int compare_function (void *elet_1, void *elet_2)
 {
     int *el_a = (int*) elet_1;
@@ -13,12 +17,14 @@ int compare_function (void *elet_1, void *elet_2)
     return (*el_a > *el_b) - (*el_a < *el_b);
 }
 
+//a function to print the element in a city
 void printCity(void *element)
 {
     City *city = (City *)element;
     printf("%s\n", city->cityName);
 }
 
+//a function to check if a file read is null or not
 bool isFileNull(FILE *fileName)
 {
     if (fileName == NULL)
@@ -28,16 +34,9 @@ bool isFileNull(FILE *fileName)
     return false;
 }
 
+//a function to read and search through a .MAP file for cities and its neighbours
 void searchCityNeighbours()
 {
-//    char scanf_city[128];
-//    int scanf_dist_x;
-//    int scanf_dist_y;
-//
-//    FILE *file = fopen("FRANCE.MAP", "r");
-//    fscanf(file, "%s %d %d", scanf_city, &scanf_dist_x, &scanf_dist_x);
-//    printf("We found: %s %d %d\n", scanf_city, scanf_dist_x, scanf_dist_y);
-
     int num, distance_1, distance_2;
     char neighbour_name[128];
     char city_name[128];
@@ -48,6 +47,7 @@ void searchCityNeighbours()
 
     int elt1, elt2;
 
+    //create a list of cities and neighbour
     List *map = newList(compare_function, printCity);
 
     //check if file is not null before reading contents
@@ -64,18 +64,35 @@ void searchCityNeighbours()
             if(num == 3)
             {
                 //city found so add to city list
-                //printf("%s %d %d\n", city_name, distance_1, distance_2);
-                 printf("print this string %s\n", city_name);
+                city = (City *)malloc(sizeof(City));
+                city->longitude = distance_1;
+                city->latitude = distance_2;
+                city->distanceFromStart = 100000;
+                city->distanceToGoal = 100000;
+                city->neighbour = newList(compare_function, printCity);
+
+                //add city to map
+                addList(map, city);
+
+                //print result of the city
+                printf("These are the Cities found %s\n", city_name);
             }
             else if(num == 2)
             {
                 //neighbour found add to neighbour list
                 //printf("%s %d %d\n", neighbour_name, distance_1, distance_2);
-                 printf("print this string %s\n", city_name);
+                neighbour = (Neighbour *)malloc(sizeof(Neighbour));
+                neighbour->city_Name = city_name;
+                neighbour->distance = distance_1 + distance_2 ;
+                neighbour->city = newList(compare_function, printCity);
+
+                addList(map, neighbour);
+
+                printf("print this string %s\n", city_name);
             }
             else
             {
-                //error
+                status.ERRUNKNOWN;
             }
         }
     }
@@ -86,7 +103,6 @@ void searchCityNeighbours()
 
 int main()
 {
-    //printf("Hello world!\n");
     searchCityNeighbours();
     return 0;
 }
