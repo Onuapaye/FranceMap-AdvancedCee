@@ -118,8 +118,8 @@ void myFunctionLoop(List *map)
         // loop through all cities
         currentCity = (City *)node->val;
 
-        neighbourNode = (Node *)currentCity->neighbour;	// this is list of neighbours
-
+        //neighbourNode = (Node *)currentCity->neighbour;	// this is list of neighbours
+        neighbourNode = (Node *)currentCity->neighbour->head;
         while (neighbourNode)
         {
             // loop through all neighbours
