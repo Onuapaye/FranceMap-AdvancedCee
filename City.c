@@ -25,6 +25,7 @@ bool isFileNull(FILE *fileName)
     {
         return true;
     }
+    return false;
 }
 
 void searchCityNeighbours()
