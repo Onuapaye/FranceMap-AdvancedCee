@@ -37,15 +37,12 @@ bool isFileNull(FILE *fileName)
 //a function to read and search through a .MAP file for cities and its neighbours
 void searchCityNeighbours()
 {
-    int num, distance_1, distance_2;
-    char neighbour_name[128];
-    char city_name[128];
+    int num, longitude_distance, latitude_distance;
+    char city_neighbour_name[128];
 
     //create a pointer to the file
     FILE *franceFile;
     franceFile = fopen("FRANCE.MAP", "r");
-
-    //int elt1, elt2;
 
     //create a list of cities and neighbour
     List *map = newList(compare_function, printCity);
@@ -59,14 +56,14 @@ void searchCityNeighbours()
     else
     {
         //read through the file with a loop
-        while((num = fscanf(franceFile, "%s %d %d", city_name, &distance_1, &distance_2)) != EOF)
+        while((num = fscanf(franceFile, "%s %d %d", city_neighbour_name, &longitude_distance, &latitude_distance)) != EOF)
         {
             if(num == 3)
             {
                 //city found so add to city list
                 city = (City *)malloc(sizeof(City));
-                city->longitude = distance_1;
-                city->latitude = distance_2;
+                city->longitude = longitude_distance;
+                city->latitude = latitude_distance;
                 city->distanceFromStart = 100000;
                 city->distanceToGoal = 100000;
                 city->neighbour = newList(compare_function, printCity);
@@ -75,20 +72,20 @@ void searchCityNeighbours()
                 addList(map, city);
 
                 //print result of the city
-                printf("These are the Cities found %s\n", city_name);
+                printf("A City of %s is found.\n", city_neighbour_name);
             }
             else if(num == 2)
             {
                 //neighbour found add to neighbour list
                 //printf("%s %d %d\n", neighbour_name, distance_1, distance_2);
                 neighbour = (Neighbour *)malloc(sizeof(Neighbour));
-                neighbour->city_Name = city_name;
-                neighbour->distance = distance_1 + distance_2 ;
+                neighbour->city_Name = city_neighbour_name;
+                neighbour->distance = longitude_distance + latitude_distance ;
                 neighbour->city = newList(compare_function, printCity);
 
                 addList(map, neighbour);
 
-                printf("These are the Neighbours found %s\n", neighbour_name);//must I use neighbour_name or city_name?
+                printf("A Neighbour of %s is found\n", city_neighbour_name);
             }
             else
             {

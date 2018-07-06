@@ -8,8 +8,8 @@ typedef struct City_List
     char cityName[128];
     int longitude;
     int latitude;
-    int distanceFromStart; // 100000;
-    int distanceToGoal; // 100000;
+    int distanceFromStart; // 100000 a big value assigned;
+    int distanceToGoal; // 100000 a big value assigned;
     List *neighbour;
 }City;
 
