@@ -22,7 +22,7 @@ typedef struct Neighbour_List
 } Neighbour;
 
 
-void getCityByName();
+
 
 //a function to search for cities and neighbours
 void searchCityNeighbours();

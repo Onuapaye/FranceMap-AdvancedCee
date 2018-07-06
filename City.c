@@ -93,13 +93,32 @@ void searchCityNeighbours()
                 //status.ERRUNKNOWN;
             }
         }
+
+        //foreach loop to assign cities
+        foreach city in map_List {
+             foreach neighbor in city->neighbor{
+                neighbor->city = findCityByName(map, neighbor->city_Name);
+             }
+        }
     }
 
     //close the file resource
     fclose(franceFile);
 }
 
+//find a city by its name to check its duplication
+City *findCityByName(List *map, char *name_of_city){
 
+    Node *node = map->head;
+    while (node){
+        City *city = (City *)node->val;
+        if (strcmp(city->cityName, name_of_city) == 0){
+            return city;
+        }
+        node = node->next;
+    }
+    return 0;
+}
 
 int main()
 {
