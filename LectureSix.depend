@@ -21,14 +21,15 @@
 	<stdio.h>
 	"List.h"
 
-1530865583 source:c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\city.c
+1530892503 source:c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\city.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
+	<string.h>
 	"City.h"
 	"status.h"
 
-1530866516 c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\city.h
+1530894860 c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\city.h
 	<stdio.h>
 	<stdlib.h>
 	"List.h"

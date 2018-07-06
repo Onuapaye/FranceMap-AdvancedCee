@@ -17,7 +17,7 @@ typedef struct City_List
 typedef struct Neighbour_List
 {
     City *city;
-    char city_Name;
+    char city_Name[128];
     int distance;
 } Neighbour;
 
