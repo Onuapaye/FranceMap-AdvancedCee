@@ -51,7 +51,7 @@ void searchCityNeighbours()
     //check if file is not null before reading contents
     if (isFileNull(franceFile) == true)
     {
-        fprintf(stderr, "Can't open input file FRANCE.MAP!\n");
+        printf(stderr, "Can't open input file FRANCE.MAP!\n");
         exit(1);
     }
     else
@@ -62,12 +62,14 @@ void searchCityNeighbours()
             if(num == 3)
             {
                 //city found so add to city list
-                fprintf(num, "%s %d %d\n", city_name, distance_1, distance_2);
+                //printf("%s %d %d\n", city_name, distance_1, distance_2);
+                 printf("print this string %s\n", city_name);
             }
             else if(num == 2)
             {
                 //neighbour found add to neighbour list
-                fprintf(num, "%s %d %d\n", neighbour_name, distance_1, distance_2);
+                //printf("%s %d %d\n", neighbour_name, distance_1, distance_2);
+                 printf("print this string %s\n", city_name);
             }
             else
             {
