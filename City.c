@@ -83,9 +83,9 @@ void searchCityNeighbours()
                 neighbour = (Neighbour *)malloc(sizeof(Neighbour));
                 neighbour->city_Name = city_neighbour_name;
                 neighbour->distance = (longitude_distance + latitude_distance) ;
-                neighbour->city = newList(compare_function, printCity);
+                neighbour->city = 0; //newList(compare_function, printCity);
 
-                addList(map, neighbour);
+                addList(city->neighbour, neighbour)
 
                 printf("A Neighbour of %s is found\n", city_neighbour_name);
             }
