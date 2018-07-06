@@ -62,6 +62,7 @@ void searchCityNeighbours()
             {
                 //city found so add to city list
                 city = (City *)malloc(sizeof(City));
+                city->cityName = city_neighbour_name;
                 city->longitude = longitude_distance;
                 city->latitude = latitude_distance;
                 city->distanceFromStart = 100000;
@@ -70,6 +71,7 @@ void searchCityNeighbours()
 
                 //add city to map
                 addList(map, city);
+                addList(city->neighbour, neighbour);
 
                 //print result of the city
                 printf("A City of %s is found.\n", city_neighbour_name);
@@ -80,7 +82,7 @@ void searchCityNeighbours()
                 //printf("%s %d %d\n", neighbour_name, distance_1, distance_2);
                 neighbour = (Neighbour *)malloc(sizeof(Neighbour));
                 neighbour->city_Name = city_neighbour_name;
-                neighbour->distance = longitude_distance + latitude_distance ;
+                neighbour->distance = (longitude_distance + latitude_distance) ;
                 neighbour->city = newList(compare_function, printCity);
 
                 addList(map, neighbour);
@@ -97,6 +99,8 @@ void searchCityNeighbours()
     //close the file resource
     fclose(franceFile);
 }
+
+
 
 int main()
 {

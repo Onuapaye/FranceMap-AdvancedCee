@@ -22,11 +22,10 @@ typedef struct Neighbour_List
 } Neighbour;
 
 
-//void getCityByName(neighbour->name);
+void getCityByName();
 
+//a function to search for cities and neighbours
 void searchCityNeighbours();
-
-//coordinate
 
 //doxygen -> for generating html files
 
