@@ -127,7 +127,7 @@ void myFunctionLoop(List *map)
             currentNeighbour->city = findCityByName(map, currentNeighbour->city_Name);
             neighbourNode = neighbourNode->next;
         }
-
+        printf("City is %s\n", currentCity);
         node = node->next;
     }
 }
