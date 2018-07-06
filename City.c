@@ -33,7 +33,7 @@ void searchCityNeighbours()
 
     int elt1, elt2;
 
-    List *map = newList(compare_function(elt1,elt2),nullptr);
+    List *map = newList(compare_function(elt1,elt2),printCity());
 
     //check if file is not null before reading contents
     if (isFileNull(franceFile) == true)
