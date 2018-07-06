@@ -45,7 +45,7 @@ void searchCityNeighbours()
     {
         //read through the file with a loop
         int num, distance_1, distance_2;
-        char city_name, neighbour_name;
+        char* city_name, neighbour_name;
 
         while((num = fscanf(franceFile, "%s %d %d")), !EOF)
         {

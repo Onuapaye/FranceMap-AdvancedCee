@@ -10,7 +10,7 @@
 
 1445023192 c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\status.h
 
-1530842051 source:c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\main.c
+1530865218 source:c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\main.c
 	<stdio.h>
 	<stdlib.h>
 
@@ -19,5 +19,17 @@
 
 1530848004 source:c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\list.c
 	<stdio.h>
+	"List.h"
+
+1530865583 source:c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\city.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"City.h"
+	"status.h"
+
+1530842676 c:\users\mr kasapa\dropbox\epita lectures\advanced_c\lecturesix\city.h
+	<stdio.h>
+	<stdlib.h>
 	"List.h"
 

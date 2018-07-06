@@ -41,12 +41,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="List.h" />
-		<Unit filename="ListTest.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="makefile" />
 		<Unit filename="status.c">
 			<Option compilerVar="CC" />
 		</Unit>
