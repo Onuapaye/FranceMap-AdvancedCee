@@ -51,7 +51,7 @@ void searchCityNeighbours()
     //check if file is not null before reading contents
     if (isFileNull(franceFile) == true)
     {
-        printf(stderr, "Can't open input file FRANCE.MAP!\n");
+        printf("Can't open input file FRANCE.MAP!\n");
         exit(1);
     }
     else
