@@ -12,6 +12,11 @@ int compare_function (void *elet_1, void *elet_2)
   return (*el_a > *el_b) - (*el_a < *el_b);
 }
 
+void printCity(void *element){
+    City *city = (City *)element;
+    printf("%s\n", city->cityName);
+}
+
 bool isFileNull(char* fileName)
 {
     if (fileName == NULL)
