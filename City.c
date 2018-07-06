@@ -82,7 +82,8 @@ void searchCityNeighbours()
                 //printf("%s %d %d\n", neighbour_name, distance_1, distance_2);
                 neighbour = (Neighbour *)malloc(sizeof(Neighbour));
                 neighbour->city_Name = city_neighbour_name;
-                neighbour->distance = (longitude_distance + latitude_distance) ;
+                //neighbour->distance = (longitude_distance + latitude_distance) ;
+                strcpy(neighbour->city_Name, city_neighbour_name);
                 neighbour->city = 0; //newList(compare_function, printCity);
 
                 addList(city->neighbour, neighbour);
@@ -96,13 +97,13 @@ void searchCityNeighbours()
         }
 
         //foreach loop to assign cities
-        myFunctionLoop();
+        myFunctionLoop(map);
 
     //close the file resource
     fclose(franceFile);
 }
 
-void myFunctionLoop()
+void myFunctionLoop(List *map)
 {
 
     Node *node = map->head;
