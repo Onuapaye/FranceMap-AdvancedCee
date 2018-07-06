@@ -5,7 +5,7 @@
 //city
 typedef struct City_List
 {
-    char cityName;
+    char cityName[128];
     int longitude;
     int latitude;
     int distanceFromStart; // 100000;
