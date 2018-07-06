@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "City.h"
 #include "status.h"
 
@@ -62,7 +63,7 @@ void searchCityNeighbours()
             {
                 //city found so add to city list
                 city = (City *)malloc(sizeof(City));
-                city->cityName = city_neighbour_name;
+                strcpy(city->cityName, city_neighbour_name);
                 city->longitude = longitude_distance;
                 city->latitude = latitude_distance;
                 city->distanceFromStart = 100000;
@@ -95,24 +96,48 @@ void searchCityNeighbours()
         }
 
         //foreach loop to assign cities
-        foreach city in map_List {
-             foreach neighbor in city->neighbor{
-                neighbor->city = findCityByName(map, neighbor->city_Name);
-             }
-        }
-    }
+        myFunctionLoop();
 
     //close the file resource
     fclose(franceFile);
 }
 
-//find a city by its name to check its duplication
-City *findCityByName(List *map, char *name_of_city){
+void myFunctionLoop()
+{
 
     Node *node = map->head;
-    while (node){
+    Node *neighbourNode;
+    City *currentCity;
+    Neighbour *currentNeighbour;
+
+    while (node)
+    {
+        // loop through all cities
+        currentCity = (City *)node->val;
+
+        neighbourNode = (Node *)currentCity->neighbour;	// this is list of neighbours
+
+        while (neighbourNode)
+        {
+            // loop through all neighbours
+            currentNeighbour = (Neighbour *)neighbourNode->val;
+            currentNeighbour->city = findCityByName(map, currentNeighbour->city_Name);
+            neighbourNode = neighbourNode->next;
+        }
+
+        node = node->next;
+    }
+}
+
+//find a city by its name to check its duplication
+City *findCityByName(List *map, char *name_of_city)
+{
+    Node *node = map->head;
+    while (node)
+    {
         City *city = (City *)node->val;
-        if (strcmp(city->cityName, name_of_city) == 0){
+        if (strcmp(city->cityName, name_of_city) == 0)
+        {
             return city;
         }
         node = node->next;
