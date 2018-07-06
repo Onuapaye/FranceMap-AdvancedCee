@@ -44,18 +44,20 @@ void searchCityNeighbours()
     else
     {
         //read through the file with a loop
-        int num;
+        int num, distance_1, distance_2;
+        char city_name, neighbour_name;
+
         while((num = fscanf(franceFile, "%s %d %d")), !EOF)
         {
             if(num == 3)
             {
                 //city found so add to city list
-                fprintf(num, "%s %d %d\n", city, dis1, dis2);
+                fprintf(num, "%s %d %d\n", city_name, distance_1, distance_2);
             }
             else if(num == 2)
             {
                 //neighbour found add to neighbour list
-                fprintf(num, "%s %d %d\n", city, dis1, dis2);
+                fprintf(num, "%s %d %d\n", neighbour_name, distance_1, distance_2);
             }
             else
             {
